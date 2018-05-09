@@ -13,7 +13,7 @@
           <v-spacer></v-spacer>
           <v-btn color="primary" flat nuxt to="/login">로그인</v-btn>
           <v-spacer></v-spacer>
-          <v-btn color="danger" flat @click="requestLogout">로그아웃</v-btn>
+          <v-btn color="danger" flat @click="$auth.logout()">로그아웃</v-btn>
         </v-card-actions>
 
         <div>
@@ -30,16 +30,10 @@ import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
 export default {
-  middleware: 'auth',
   auth: false,
   components: {
     Logo,
     VuetifyLogo
-  },
-  methods: {
-    requestLogout () {
-      this.$auth.logout()
-    }
-  },
+  }
 }
 </script>
